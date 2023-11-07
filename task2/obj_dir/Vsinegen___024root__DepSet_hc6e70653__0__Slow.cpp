@@ -55,7 +55,8 @@ VL_ATTR_COLD void Vsinegen___024root___ctor_var_reset(Vsinegen___024root* vlSelf
     vlSelf->offset = VL_RAND_RESET_I(8);
     vlSelf->dout1 = VL_RAND_RESET_I(8);
     vlSelf->dout2 = VL_RAND_RESET_I(8);
-    vlSelf->sinegen__DOT__address = VL_RAND_RESET_I(8);
+    vlSelf->sinegen__DOT__address1 = VL_RAND_RESET_I(8);
+    vlSelf->sinegen__DOT__address2 = VL_RAND_RESET_I(8);
     for (int __Vi0=0; __Vi0<256; ++__Vi0) {
         vlSelf->sinegen__DOT__sineRom__DOT__rom_array[__Vi0] = VL_RAND_RESET_I(8);
     }

@@ -11,19 +11,23 @@ VL_INLINE_OPT void Vsinegen___024root___sequent__TOP__0(Vsinegen___024root* vlSe
     Vsinegen__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vsinegen___024root___sequent__TOP__0\n"); );
     // Init
-    CData/*7:0*/ __Vdly__sinegen__DOT__address;
+    CData/*7:0*/ __Vdly__sinegen__DOT__address1;
     // Body
-    __Vdly__sinegen__DOT__address = vlSelf->sinegen__DOT__address;
-    __Vdly__sinegen__DOT__address = ((IData)(vlSelf->rst)
-                                      ? 0U : (0xffU 
-                                              & ((IData)(vlSelf->sinegen__DOT__address) 
-                                                 + (IData)(vlSelf->en))));
+    __Vdly__sinegen__DOT__address1 = vlSelf->sinegen__DOT__address1;
     vlSelf->dout1 = vlSelf->sinegen__DOT__sineRom__DOT__rom_array
-        [vlSelf->sinegen__DOT__address];
+        [vlSelf->sinegen__DOT__address1];
     vlSelf->dout2 = vlSelf->sinegen__DOT__sineRom__DOT__rom_array
-        [(0xffU & ((IData)(vlSelf->sinegen__DOT__address) 
-                   + (IData)(vlSelf->offset)))];
-    vlSelf->sinegen__DOT__address = __Vdly__sinegen__DOT__address;
+        [vlSelf->sinegen__DOT__address2];
+    if (vlSelf->rst) {
+        __Vdly__sinegen__DOT__address1 = 0U;
+        vlSelf->sinegen__DOT__address2 = 0U;
+    } else {
+        __Vdly__sinegen__DOT__address1 = (0xffU & ((IData)(vlSelf->sinegen__DOT__address1) 
+                                                   + (IData)(vlSelf->en)));
+        vlSelf->sinegen__DOT__address2 = (0xffU & ((IData)(vlSelf->sinegen__DOT__address1) 
+                                                   + (IData)(vlSelf->offset)));
+    }
+    vlSelf->sinegen__DOT__address1 = __Vdly__sinegen__DOT__address1;
 }
 
 void Vsinegen___024root___eval(Vsinegen___024root* vlSelf) {

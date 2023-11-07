@@ -4,7 +4,7 @@ module rom2ports #(
 )(
     input logic                         clk,
     input logic [ADDRESS_WIDTH-1:0]     addr1,
-    input logic [ADDRESS_WIDTH-1:0]     addr2,
+    input logic [ADDRESS_WIDTH-1:0]     addr2, 
     output logic    [DATA_WIDTH-1:0]    dout1,
     output logic    [DATA_WIDTH-1:0]    dout2
 );
@@ -19,9 +19,7 @@ end;
 always_ff @(posedge clk) begin
     // output is synchronous
     dout1 <= rom_array [addr1];
-    dout2 <= rom_array [addr1+addr2]; 
-    // addr2 = offset = 64 set by rotary encoder
-    // 90/360 * 2^8 = 64 so the phase offset between two sinewaves is 90 degrees
+    dout2 <= rom_array [addr2]; 
     end
 
 endmodule

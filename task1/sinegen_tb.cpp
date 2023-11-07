@@ -39,7 +39,7 @@ int main(int argc, char **argv, char **env) {
             top->eval ();
         }
 
-        top->incr = vbdValue();
+        top->incr = vbdValue(); // change frequency of sinewave generated using vbdValue() function
         // plot ROM output and print cycle count
         vbdPlot(int (top->dout), 0, 255);
         vbdCycle(simcyc);
